@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 function Links() {
   const navigate = useNavigate();
-
   const handleNavigation = (path) => {
     navigate(path);
-    window.scrollTo(0, 0); // Scrolls to the top of the page
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -14,8 +13,11 @@ function Links() {
       <h6 className="text-uppercase fw-bold mb-4 text-light">Useful links</h6>
       <p>
         <span
+          role="button"
+          tabIndex="0"
           className="text-reset"
           onClick={() => handleNavigation("/profile")}
+          onKeyPress={(e) => e.key === 'Enter' && handleNavigation("/profile")}
           style={{ cursor: "pointer" }}
         >
           Account
@@ -23,8 +25,11 @@ function Links() {
       </p>
       <p>
         <span
+          role="button"
+          tabIndex="0"
           className="text-reset"
-          onClick={() => handleNavigation("/settings")}
+          onClick={() => handleNavigation("/setting")}
+          onKeyPress={(e) => e.key === 'Enter' && handleNavigation("/setting")}
           style={{ cursor: "pointer" }}
         >
           Settings
@@ -32,8 +37,11 @@ function Links() {
       </p>
       <p>
         <span
+          role="button"
+          tabIndex="0"
           className="text-reset"
           onClick={() => handleNavigation("/cart")}
+          onKeyPress={(e) => e.key === 'Enter' && handleNavigation("/cart")}
           style={{ cursor: "pointer" }}
         >
           Checkout
@@ -41,8 +49,11 @@ function Links() {
       </p>
       <p>
         <span
+          role="button"
+          tabIndex="0"
           className="text-reset"
           onClick={() => handleNavigation("/help")}
+          onKeyPress={(e) => e.key === 'Enter' && handleNavigation("/help")}
           style={{ cursor: "pointer" }}
         >
           Help

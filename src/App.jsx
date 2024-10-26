@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ContactPage from "./pages/ContactPage";
-import Setting from "./components/settingsPages/Setting";
+import Setting from "./pages/Setting";
 import Help from "./pages/Help";
 import Registration from "./pages/Registration";
 
@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     dispatch(setCartNumber());
   }, [cartItems]);
+
   return (
     <div className="wrapper bg-dark text-white">
       <NavBar title={title} />
@@ -31,12 +32,11 @@ function App() {
           <Route path="/single/:id" element={<Single />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/registration" element={<Registration/>} />
+          <Route path="/registration" element={<Registration />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="/contact_page" element={<ContactPage />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/settings" element={<Setting/>}/>
         </Routes>
       </div>
       <Footer title={title} />
